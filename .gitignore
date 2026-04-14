@@ -1,0 +1,13 @@
+.env
+.venv/
+python/
+__pycache__/
+.ruff_cache/
+.pytest_cache/
+
+vectorstore/
+data/
+
+*.pyc
+*.pyo
+*.pyd

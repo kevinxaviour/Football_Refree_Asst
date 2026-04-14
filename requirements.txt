@@ -1,0 +1,35 @@
+
+# PDF Processing
+pdfplumber
+pypdf
+
+# Embeddings (local)
+sentence-transformers
+torch  # CPU-only is fine
+
+# Vector Database (local, free)
+chromadb
+
+# LLM providers
+openai
+groq>=0.30.0,<1.0.0
+
+# RAG & Agentic AI Framework
+langchain
+langchain-community
+langchain-openai
+langchain-groq
+langsmith
+langchain-text-splitters
+
+# API
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Utilities
+python-dotenv
+requests
+pydantic
+tqdm
+tenacity  # Retry logic for API rate limits
