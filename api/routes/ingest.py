@@ -1,6 +1,6 @@
 """
 api/routes/ingest.py
-=====================
+------------------------
 Ingest endpoint — indexes the FIFA Laws PDF into ChromaDB.
 """
 

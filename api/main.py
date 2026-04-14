@@ -100,34 +100,7 @@ def _ensure_vector_index() -> None:
 
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 async def root() -> str:
-    return """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>FIFA Referee AI Assistant</title>
-        <style>
-            body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
-            h1 { color: #1a5276; }
-            .card { background: #f4f6f7; padding: 20px; border-radius: 8px; margin: 15px 0; }
-            code { background: #2c3e50; color: #ecf0f1; padding: 12px; display: block; border-radius: 5px; margin: 5px 0; font-size: 13px; }
-            a { color: #2980b9; }
-        </style>
-    </head>
-    <body>
-        <h1>FIFA Referee AI Assistant</h1>
-        <p>An AI-powered Laws of the Game assistant using RAG and agentic AI.</p>
-        <div class="card">
-            <h3>API Documentation</h3>
-            <p><a href="/docs">Swagger UI</a> | <a href="/redoc">ReDoc</a></p>
-        </div>
-        <div class="card">
-            <h3>Quick Start</h3>
-            <p>1. Build the vector index with <code>python scripts/build_index.py</code></p>
-            <p>2. Ask questions with <code>POST /query</code></p>
-        </div>
-    </body>
-    </html>
-    """
+    return "HELLO"
 
 
 # ── Startup event ──────────────────────────────────────────────
@@ -136,15 +109,15 @@ async def root() -> str:
 @app.on_event("startup")
 async def startup_event():
     """Warm up dependencies and ensure the vector index exists."""
-    print("🚀 FIFA Referee AI Assistant starting up...")
+    print("FIFA Referee AI Assistant starting up...")
     try:
         from src.embeddings.embedder import get_model
 
         _ensure_vector_index()
         get_model()  # Load embedding model into memory
-        print("✅ System ready!")
+        print("System ready!")
     except Exception as e:
-        print(f"⚠️  Startup warning: {e}")
+        print(f"Startup warning: {e}")
 
 
 # ── Run directly ───────────────────────────────────────────────

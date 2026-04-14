@@ -1,7 +1,7 @@
 """
 api/routes/health.py
 api/routes/laws.py
-====================
+
 Health check and Laws reference endpoints.
 """
 
